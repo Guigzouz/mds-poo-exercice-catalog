@@ -4,18 +4,23 @@ namespace App\Http\Controllers;
 
 use App\Models\Movie;
 use Illuminate\Http\Request;
+use Illuminate\Pagination\Paginator;
 
 class MovieController extends Controller
 {
     public function show($id){
-        $movie = Movie::find($id)->first();
+        $movie = Movie::find($id);
         // dd($movie);
         return view('single', ['movie' => $movie]);
     }
 
+
+
+
     public function list(){
-        $movie = Movie::all()->take(20);
+        Paginator::useBootstrap();
+        $movies = Movie::paginate(20);
         // dd($movie);
-        return view('list', ['movie' => $movie]);
+        return view('list', ['movies' => $movies]);
     }
 }
