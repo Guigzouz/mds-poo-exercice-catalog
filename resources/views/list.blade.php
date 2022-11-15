@@ -15,20 +15,28 @@
     </style>
 </head>
 <body>
-    <div class="filters">
-        <a href="/movies?order_by=startYear&order=asc"><button>Newest</button></a>
-        <a href="/movies?order_by=averageRating&order=desc"><button>Top rated</button></a>
-        
+    <div class="filters">  
+
+        <div class="dropdown-startYear">
+            <a href="/movies?order_by=startYear&order=desc"><button>Newest</button></a>
+            <a href="/movies?order_by=startYear&order=asc"><button>Oldest</button></a>
+        </div>
+        <div class="dropdown-averageRating">
+            <a href="/movies?order_by=averageRating&order=desc"><button>Top rated</button></a>
+            <a href="/movies?order_by=averageRating&order=asc"><button>Bottom rated</button></a>
+        </div>
+        <a href="/movies"><button>Vanilla</button></a>        
+
     </div>
     @foreach ($movies as $movie)
     <div style="display: flex">
-        <img href="/movies/{{ $movie->id }}" src="{{$movie->poster}}" alt="">
+        <a href="/movies/{{ $movie->id }}"><img src="{{$movie->poster}}" alt=""></a>
         <h2>{{$movie->primaryTitle}}</h2>
         <p>{{$movie->plot}}</p>
     </div>
     @endforeach
     <div class="pagination">
-        {{ $movies->appends(request()->query())->links() }}
+        {{ $movies->appends(request()->query())->links() }} 
     </div>
     
 

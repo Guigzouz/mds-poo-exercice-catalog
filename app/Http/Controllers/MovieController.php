@@ -13,7 +13,16 @@ class MovieController extends Controller
         // dd($movie);
         return view('single', ['movie' => $movie]);
     }
-
+    
+    public function randomizer(Request $request){
+        $rdmId = Movie::all();
+        $rdmLength = count($rdmId);
+        $rdm = rand(0, $rdmLength - 1);
+        $movie = Movie::find($rdm);
+        return redirect(route('single', $rdm));
+        // dd($movie);
+        return view('single', ['movie' => $movie]);
+    }
 
 
 
@@ -34,29 +43,5 @@ class MovieController extends Controller
         // $movies = Movie::paginate(20);
         // dd($movie);
         return view('list', ['movies' => $movies]);
-        
-        //averageRating handler
-        // if($order_by === 'averageRating'){
-        //     $movies=Movie::orderBy('averageRating', 'asc')->paginate(20);
-        //     if($order === 'asc'){
-        //         $movies=Movie::orderBy('averageRating', 'asc')->paginate(20);
-        //     } else {
-        //         $movies=Movie::orderBy('averageRating', 'desc')->paginate(20);
-        //     };
-
-        // //realease date handler
-        // } elseif ($order_by === 'releaseDate'){
-        //     $movies=Movie::orderBy('releaseDate', 'asc')->paginate(20);
-        //     if($order === 'asc'){
-        //         $movies=Movie::orderBy('releaseDate', 'asc')->paginate(20);
-        //     } else {
-        //         $movies=Movie::orderBy('releaseDate', 'desc')->paginate(20);
-        //     };
-        // } else {
-        //     $movies = Movie::paginate(20);
-        //     echo "ici";
-
-        // }
-
     }
 }
