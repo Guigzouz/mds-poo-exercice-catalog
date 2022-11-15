@@ -17,7 +17,7 @@ class MovieController extends Controller
     public function randomizer(Request $request){
         $rdmId = Movie::all();
         $rdmLength = count($rdmId);
-        $rdm = rand(0, $rdmLength - 1);
+        $rdm = rand(1, $rdmLength);
         $movie = Movie::find($rdm);
         return redirect(route('single', $rdm));
         // dd($movie);
