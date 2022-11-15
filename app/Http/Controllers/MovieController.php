@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Movie;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\Paginator;
 
@@ -29,16 +30,21 @@ class MovieController extends Controller
     public function list(Request $request){
         $order_by = $request->query('order_by');
         $order = $request->query('order');
-        // $query = Movie::query();
-        
+        $genre = $request->query('genre');
+        $query = Movie::query();
+
         if ($order_by && $order){
-            $movies = Movie::orderBy($order_by, $order)->paginate(20);
-        } else {
-            $movies = Movie::paginate(20);
+            $query->orderBy($order_by, $order);
         }
 
+        if ($genre != null){
+            //query filtre genre
+            $query->whereHas('genres', function (Builder $query) use ($genre) {
+                $query->where('label', '=', $genre);
+            });
+        }
 
-
+        $movies = $query->paginate(20);
         Paginator::useBootstrapFive();
         // $movies = Movie::paginate(20);
         // dd($movie);

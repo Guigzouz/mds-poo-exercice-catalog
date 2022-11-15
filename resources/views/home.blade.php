@@ -27,7 +27,7 @@
     <div class="container">
         
         <h1>{{ config('app.name') }}</h1>
-        <iframe id="inlineFrame" width="100%" height="1000" src="/movie/rdm"></iframe>
+        {{-- <iframe id="inlineFrame" width="100%" height="1000" src="/movie/rdm"></iframe> --}}
 
         <a href="/movies"><h3>See 20 more movies</h3></a>
         <a href="/movie/rdm"><h3>See a random movie</h3></a>

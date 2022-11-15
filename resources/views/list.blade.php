@@ -25,6 +25,9 @@
             <a href="/movies?order_by=averageRating&order=desc"><button>Top rated</button></a>
             <a href="/movies?order_by=averageRating&order=asc"><button>Bottom rated</button></a>
         </div>
+        <div class="dropdown-averageRating">
+            <a href="/movies?genre=Action"><button>genre</button></a>
+        </div>
         <a href="/movies"><button>Vanilla</button></a>        
 
     </div>
