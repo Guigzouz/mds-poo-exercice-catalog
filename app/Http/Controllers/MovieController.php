@@ -14,7 +14,7 @@ class MovieController extends Controller
         return view('single', ['movie' => $movie]);
     }
     
-    public function randomizer(Request $request){
+    public function randomizer(){
         $rdmId = Movie::all();
         $rdmLength = count($rdmId);
         $rdm = rand(1, $rdmLength);
