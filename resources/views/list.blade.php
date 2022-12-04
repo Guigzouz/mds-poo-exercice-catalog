@@ -1,20 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <title>list</title>
-    <style>
-        .pagination>nav>div{
-            display: flex;
-            flex-direction: column;
-            justify-content: space-evenly;
-        }
-    </style>
-</head>
-<body>
+@extends('layouts.master')
+
+@section('content')
+
     <div class="filters">  
 
         <div class="dropdown-startYear">
@@ -29,20 +16,31 @@
             <a href="/movies?genre=Action"><button>genre</button></a>
         </div>
         <a href="/movies"><button>Vanilla</button></a>        
-
+        
     </div>
+    <div class="list-div">
     @foreach ($movies as $movie)
-    <div style="display: flex">
-        <a href="/movies/{{ $movie->id }}"><img src="{{$movie->poster}}" alt=""></a>
-        <h2>{{$movie->primaryTitle}}</h2>
+    <main style="display: flex">
+        <div class="preview">
+            <a href="/movies/{{ $movie->id }}"><img src="{{$movie->poster}}" alt=""></a>
+            <h2 class="movie-title">{{$movie->primaryTitle}}</h2>
+        </div>
         <p>{{$movie->plot}}</p>
-    </div>
+    </main>
     @endforeach
+    </div>
+
     <div class="pagination">
         {{ $movies->appends(request()->query())->links() }} 
     </div>
     
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <style>
+        .pagination>nav>div{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+        }
+        </style>
 
-
-</body>
-</html>
+@endsection

@@ -1,16 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+@extends('layouts.master')
 
-    <title>{{ config('app.name') }}</title>
+@section('content')
+    <div class="container">
+        
+        {{-- <iframe id="inlineFrame" width="100%" height="1000" src="/movie/rdm"></iframe> --}}
 
-    <!-- Fonts -->
-    <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-
-    <!-- Styles -->
+        <div class="wrapper">
+            @foreach ($movies as $movie)
+            <div>
+                <a href="/movies/{{ $movie->id }}">
+                    <img src="{{ $movie->poster }}" alt="{{ $movie->primaryTitle }}">
+                </a>
+            </div>
+            @endforeach
+        </div>
+    </div>
     <style>
         .container {
             margin: auto;
@@ -22,25 +26,6 @@
             grid-template-columns: 1fr 1fr 1fr;
         }
     </style>
-</head>
-<body>
-    <div class="container">
-        
-        <h1>{{ config('app.name') }}</h1>
-        {{-- <iframe id="inlineFrame" width="100%" height="1000" src="/movie/rdm"></iframe> --}}
 
-        <a href="/movies"><h3>See 20 more movies</h3></a>
-        <a href="/movie/rdm"><h3>See a random movie</h3></a>
-        <div class="wrapper">
-            @foreach ($movies as $movie)
-            <div>
-                <a href="/movies/{{ $movie->id }}">
-                    <img src="{{ $movie->poster }}" alt="{{ $movie->primaryTitle }}">
-                </a>
-            </div>
-            @endforeach
-        </div>
-    </div>
+@endsection
 
-</body>
-</html>
