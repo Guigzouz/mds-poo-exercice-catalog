@@ -32,7 +32,7 @@ class Series extends Model
 
     public function genres()
     {
-        return $this->belongsToMany(Genre::class, 'series_genre');
+        return $this->belongsToMany(Genre::class, 'series_genres');
     }
 
 }
