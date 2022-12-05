@@ -27,3 +27,4 @@ Route::get('/movies/{id}', [MovieController::class, 'show'])->name('single');
 Route::get('/movie/rdm', [MovieController::class, 'randomizer']);
 Route::get('/movies', [MovieController::class, 'list']);
 Route::get('/genres', [GenreController::class, 'list']);
+Route::get('/series', [GenreController::class, 'list']);
