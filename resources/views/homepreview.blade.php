@@ -1,6 +1,3 @@
-@extends('layouts.master')
-
-@section('content')
  <div class="single-div">
     <div class="single-img">
         <img src="{{$movie->poster}}" alt="{{$movie->primaryTitle}} poster">
@@ -22,5 +19,3 @@
         </div>
     </div>
 </div>
-
-@endsection

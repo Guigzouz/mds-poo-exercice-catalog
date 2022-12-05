@@ -47,6 +47,29 @@ a:hover { text-decoration: none; }
 a:active { text-decoration: none; }
 
 
+button{
+    background-color: rgb(28, 28, 28);
+    color: rgb(49, 204, 49);
+    border-radius: 30px !important;
+    border-color: rgb(49, 204, 49);
+    padding: 3px 15px 3px 15px;
+}
+
+button:hover{
+    background-color: rgb(50, 50, 50);
+    color: rgb(0, 255, 0);
+    border-radius: 30px !important;
+    border-color: rgb(0, 255, 0);
+    padding: 3px 15px 3px 15px;
+}
+
+button:active{
+    background-color: rgb(50, 50, 50);
+    color: rgb(255, 255, 255);
+    border-radius: 30px !important;
+    border-color: rgb(255, 255, 255);
+    padding: 3px 15px 3px 15px;
+}
  /* class aimed settings */
 
 
@@ -98,6 +121,85 @@ a:active { text-decoration: none; }
     width: auto;
 }
 
+.pagination-div{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.filters{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.single-div{
+    padding: 1vw 2vw 1vw 2vw;
+}
+
+.single-img{
+    display: flex;
+}
+
+.single-img p{
+    padding: 0vw 2vw 1vw 2vw;
+    margin: 0;
+}
+
+.single-title{
+    display: flex;
+    align-items: center;
+}
+
+.single-title h1{
+    margin: 0;
+    padding: 0vw 0vw 1vw 2vw;
+
+}
+
+.single-first{
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    margin-top: 30px;
+
+}
+
+.single-first p{
+    color: rgb(49, 204, 49);
+}
+
+.genre-list{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    justify-content: center;
+    padding-left: 1vw;
+}
+
+.genre-list div{
+    padding-bottom: 1vh;
+}
+
+
+.recommendation{
+    background-color: rgb(20, 20, 20);
+    padding: 1vw 1vw 1vw 1vw;
+    margin-bottom: 50px;
+}
+
+.home-recommendation{
+    display: flex;
+}
+
+.home-desc{
+    padding: 0vw 1vw 0vw 1vw;
+}
+
+.home-desc p{
+    margin: 0;
+}
 
 main p{
     padding: 0vw 1vw;

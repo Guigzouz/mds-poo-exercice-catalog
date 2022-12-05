@@ -13,6 +13,7 @@
         <a href="/"><h1>{{ config('app.name') }}</h1></a>
         <a href="/movies"><h3>See more movies</h3></a>
         <a href="/movie/rdm"><h3>See a random movie</h3></a>
+        <a href="/genres"><h3>List all genres</h3></a>
         </nav>
     </header>
     @yield('content')
