@@ -5,8 +5,9 @@ namespace App\Models;
 use App\Models\Series;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use PhpParser\Builder\Class_;
 
-class Episodes extends Model
+class Episode extends Model
 {
     use HasFactory;
 
@@ -28,5 +29,10 @@ class Episodes extends Model
     public function genres()
     {
         return $this->belongsToMany(Genre::class, 'episodes_genres');
+    }
+
+    public function series()
+    {
+        return $this->belongsTo(Series::class, 'series_id');
     }
 }

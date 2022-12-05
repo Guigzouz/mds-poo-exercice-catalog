@@ -13,6 +13,10 @@ h1{
     font-size: 28px !important;
 }
 
+h3:hover{
+    color: rgb(49, 204, 49);
+}
+
 h2{
     color: rgb(255, 255, 255);
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -176,6 +180,7 @@ button:active{
     position: absolute;
     justify-content: center;
     padding-left: 1vw;
+    margin-top: 12vh;
 }
 
 .genre-list div{
@@ -203,4 +208,30 @@ button:active{
 
 main p{
     padding: 0vw 1vw;
+}
+
+.cta a{
+    display: flex;
+    border: solid;
+    padding: 1vh 2vw 1vh 2vw;
+    border-radius: 30px;
+    background-color: rgb(20, 20, 20);
+    border-color: white;
+    margin-bottom: 25px;
+
+}
+
+.episodes a{
+    width: 50vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.episodes:hover{
+    background-color: rgb(49, 204, 49) !important;
+}
+
+.episodes:nth-of-type(odd){
+    background-color: rgb(20, 20, 20);
 }

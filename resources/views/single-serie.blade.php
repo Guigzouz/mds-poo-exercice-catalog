@@ -21,6 +21,25 @@
             
         </div>
     </div>
+
+    <div class="episodes-list">
+        <h1>Episodes list (in a random order)</h1>
+        @foreach ($episodes as $episode)
+        <div class="episodes">
+            <a href="/episode/{{$episode->id}}">
+                <div style="display: flex">
+                    <p>{{$episode->episodeNumber}}.</p>
+                    <img src="{{$episode->poster}}" alt="{{$episode->originalTitle}}" width="100px" height="50px">
+                    
+                </div>
+                <p>{{$episode->primaryTitle}}</p>
+                <p>{{$episode->averageRating}}</p>
+                <p>{{$episode->runtimeMinutes}}</p>
+            </a>
+        </div>
+        @endforeach
+    </div>
+
 </div>
 
 @endsection

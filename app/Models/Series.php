@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\Episode;
+use Illuminate\Database\Eloquent\Collection;
 use App\Models\Genre;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -35,4 +36,8 @@ class Series extends Model
         return $this->belongsToMany(Genre::class, 'series_genres');
     }
 
+    // public function seasons()
+    // {
+        
+    // }
 }

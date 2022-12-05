@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Episode;
 use App\Models\Genre;
 use App\Models\Series;
 use Illuminate\Database\Eloquent\Builder;
@@ -12,8 +13,10 @@ class SeriesController extends Controller
 {
     public function show($id){
         $serie = Series::find($id);
-        // dd($movie);
-        return view('single-serie', ['serie' => $serie]);
+        // $episodes = Episode::where('series_id', $id)->get();
+        $episodes = $serie->episodes;
+        // dd($episodes);
+        return view('single-serie', ['serie' => $serie, 'episodes' => $episodes]);
     }
     
     public function randomizer(){

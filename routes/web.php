@@ -3,7 +3,9 @@
 use App\Http\Controllers\GenreController;
 use App\Http\Controllers\MovieController;
 use App\Http\Controllers\SeriesController;
+use App\Http\Controllers\EpisodeController;
 use App\Models\Movie;
+use App\Models\Genre;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,4 +33,5 @@ Route::get('/genres', [GenreController::class, 'list']);
 Route::get('/series', [SeriesController::class, 'list']);
 Route::get('/serie/rdm', [SeriesController::class, 'randomizer']);
 Route::get('/series/{id}', [SeriesController::class, 'show'])->name('single-serie');
+Route::get('/episode/{id}', [EpisodeController::class, 'show'])->name('single-episode');
 

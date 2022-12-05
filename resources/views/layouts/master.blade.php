@@ -13,8 +13,6 @@
         <a href="/"><h1>{{ config('app.name') }}</h1></a>
         <a href="/movies"><h3>Movies</h3></a>
         <a href="/series"><h3>Series</h3></a>
-        <a href="/movie/rdm"><h3>Random Movie</h3></a>
-        <a href="/serie/rdm"><h3>Random Serie</h3></a>
         <a href="/genres"><h3>List all genres</h3></a>
         </nav>
     </header>

@@ -25,6 +25,10 @@
         
     </div>
     <div class="list-div">
+        <div class="cta">
+            <a href="/movie/rdm"><h3>Click me to see a random movie !</h3></a>
+        </div>
+
     @foreach ($movies as $movie)
     <main style="display: flex">
         <div class="preview">

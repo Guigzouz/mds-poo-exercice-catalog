@@ -26,6 +26,9 @@
 </div>
 
 <div class="list-div">
+    <div class="cta">
+        <a href="/serie/rdm"><h3>Click me to see a random serie !</h3></a>
+    </div>
 @foreach ($series as $serie)
     <main style="display: flex">
         <div class="preview">
